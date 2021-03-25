@@ -1,0 +1,73 @@
+[
+
+{
+	"title": "Glorious",
+	"artist": "Macklemore",
+	"genre": ["rap"],
+	"year": 2017
+},
+
+{
+	"title": "No Excuses",
+	"artist": "Meghan Trainor",
+	"genre": ["pop"],
+	"year": 2018
+},
+
+{
+	"title": "When You Love Someone",
+	"artist": "Lukas Graham",
+	"genre": ["pop"],
+	"year": 2018
+},
+
+{
+	"title": "What Do I Know",
+	"artist": "Ed Sheeran",
+	"genre": ["pop"],
+	"year": 2017
+},
+
+{
+	"title": "Memories",
+	"artist": "Maroon 5",
+	"genre": ["pop"],
+	"year": 2019
+},
+
+{
+	"title": "Old Town Road",
+	"artist": "Lil Nas X",
+	"genre": ["country"],
+	"year": 2019
+},
+
+{
+	"title": "When It Rains It Pours",
+	"artist": "Luke Combs",
+	"genre": ["country"],
+	"year": 2017
+},
+
+{
+	"title": "Take Me Home, Country Roads",
+	"artist": "John Denver",
+	"genre": ["country"],
+	"year": 1971
+},
+
+{
+	"title": "Good Old Days",
+	"artist": "Macklemore",
+	"genre": ["rap"],
+	"year": 2017
+},
+
+{
+	"title": "Lose Yourself",
+	"artist": "Eminem",
+	"genre": ["rap"],
+	"year": 2002
+}
+
+]
