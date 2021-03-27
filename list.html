@@ -1,0 +1,130 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<style> 
+	body {background-color: #89cff0; font-weight: 900;
+</style>
+<title>JSON Object</title>
+	<script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
+	<script language="javascript" src="coverList.json"></script>
+
+
+</head>
+
+<body>
+
+<hr>
+
+<h2>PART 1: Raw String</h2>
+<div id="rawString"></div>
+
+
+<h2>PART 2: Serialized String</h2>
+<div id="seralizedString"></div>
+
+<h2>PART 3: User Friendly Format </h2>
+<div id="userFriendly"></div>
+
+<h2> Part 4: Genre Filter </h2>
+<div id="form"></div>
+
+<form>
+        <select id="genres">
+             <option>pop</option>
+              <option>rap</option>
+              <option>country</option>
+         </select>
+         <button type="button" id="filter">filter</button>
+
+ </form>
+ <hr>
+ <div id = "filtered">
+ 	<h3 id = "header" > </h3>
+ 	<h3> The songs that have the genre of your choice are: </h3>
+ </div>
+
+
+	<script language="javascript">
+	$.get( "https://tillyrigby.github.io/jsonlist/coverList.json", 
+		  function( data) {
+			str = JSON.stringify(data);
+			document.getElementById("rawString").innerHTML = str;
+	
+			strHTML= "<ul>";
+			data.forEach(function(coverList) {
+
+				strHTML += "<li>" 
+			    	+ coverList.title + " : " 
+					+ coverList.artist + " "
+					+ coverList.year + " ";
+
+				for (i = 0; i < coverList.genre.length; i++) {
+				strHTML += coverList.genre[i];
+			}
+
+			});
+
+
+			strHTML += "</ul>";
+			document.getElementById("seralizedString").innerHTML = strHTML;  
+
+			strHTML = "";
+			data.forEach(function(coverList) {
+
+				var title = coverList.title + "</br>";
+				var artist = "Artist: " + coverList.artist + "</br>";
+				var year = "Year: " + coverList.year + "</br>";
+				var genre = "";
+				for (i = 0; i < coverList.genre.length; i++) {
+					var genre = "Genre: " + genre + coverList.genre[i] + "</br>";
+				}
+
+				strHTML += "<hr>" + title + artist + year + genre + "</br>";
+
+
+
+			});
+			
+			strHTML += "</ul>";
+			document.getElementById("userFriendly").innerHTML = strHTML;
+
+
+	
+			$("#filter").click(function() {
+				var genre = document.getElementById("genres").value;
+	
+				document.getElementById("header").innerHTML = "Genre: " + genre;
+
+				var string = "";
+				data.forEach(function(coverList) {
+					
+					for (i = 0; i < coverList.genre.length; i++) {
+
+						if (coverList.genre[i] == genre) {
+						
+							string += "<hr>" + coverList.title + " by " + coverList.artist;
+						
+							
+
+						}
+					}
+
+				})
+				document.getElementById("filtered").innerHTML = string;
+
+				});
+			
+		
+				
+				
+
+			});
+
+
+</script>
+
+
+
+</body>
+</html>
